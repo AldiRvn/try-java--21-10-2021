@@ -4,13 +4,13 @@ import java.util.Scanner;
 public class Day1 {
     static ArrayList<String> listService = new ArrayList<>();
 
-    private static int getInput(Scanner input) {
+    protected static int getInput(Scanner input) {
         int output = input.nextInt();
         input.nextLine();
         return output;
     }
 
-    private static void InputHandler() {
+    protected static void InputHandler() {
         System.out.print("Input your command: ");
         Scanner input = new Scanner(System.in);
         int command = getInput(input);
@@ -42,7 +42,7 @@ public class Day1 {
         }
     }
 
-    private static void ShowMenu() {
+    protected static void ShowMenu() {
         System.out.println("\n== Service Management ==");
         System.out.println("List command:");
         String[] option = {
@@ -60,7 +60,7 @@ public class Day1 {
         InputHandler();
     }
 
-    private static void Read() {
+    protected static void Read() {
         System.out.printf("\nShowing list service data, with count %d:\n", listService.size());
 
         if (listService.size() == 0) {
@@ -75,27 +75,27 @@ public class Day1 {
         }
     }
 
-    private static void Add(String newData) {
+    protected static void Add(String newData) {
         listService.add(newData);
         System.out.println("Add data success.");
     }
 
-    private static void Update(int id, String newData) {
+    protected static void Update(int id, String newData) {
         listService.set(id, newData);
         System.out.println("Update data success.");
     }
 
-    public static void Delete(int id) {
+    protected static void Delete(int id) {
         listService.remove(id);
         System.out.println("Delete data success.");
     }
 
-    private static void Exit() {
+    protected static void Exit() {
         quit = true;
         System.out.println("Have a nice day");
     }
 
-    private static boolean quit = false;
+    protected static boolean quit = false;
 
     public static void main(String[] args) {
         try {
